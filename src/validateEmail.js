@@ -17,6 +17,7 @@ function validateEmail(email) {
     return false;
   }
 
+  // personalInfo rules
   if (personalInfo.startsWith('.') || personalInfo.endsWith('.')) {
     return false;
   }
@@ -29,19 +30,12 @@ function validateEmail(email) {
     return false;
   }
 
-  if (/[!$%&'*+/=?^{}|~]/.test(personalInfo)) {
-    return false;
-  }
-
+  // domain rules
   if (domain.startsWith('.')) {
     return false;
   }
 
   if (!/^[A-Za-z0-9.-]+$/.test(domain)) {
-    return false;
-  }
-
-  if (domain.startsWith('-') || domain.endsWith('-')) {
     return false;
   }
 
